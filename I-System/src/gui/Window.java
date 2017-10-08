@@ -11,15 +11,13 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 public class Window extends JFrame implements ActionListener {
-	private JMenuBar menu;
-	private JMenu file, refactor, run;
-	private JMenuItem create, open, save, exit; // FILE
-	private JMenuItem rename; // REFACTOR
-	private JMenuItem runAs, stop, debug; // RUN
+	private Menu menu;
+	private FileSystem fsys;
+	private Console console;
+	private Workspace ws;
 	
 	public Window (String name) {
 		super(name);
-		Engine.LOGGER.info("Initializing WINDOW");
 		init();
 		this.repaint();
 	}
@@ -28,40 +26,24 @@ public class Window extends JFrame implements ActionListener {
 		
 	}
 	
-	public void init() {
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();		
+	public void init() {	
 		this.setLayout(null);
 		this.pack();
+		this.setResizable(false);
 		this.setVisible(true);
-		this.setSize(screenSize);
+		this.setSize(1280,720);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		menu = new JMenuBar();
-		menu.setBackground(Color.WHITE);
-		menu.setForeground(Color.BLACK);
-		menu.setFont(Main.MAIN_FONT);
+		menu = new Menu();
+		fsys = new FileSystem();
+		console = new Console();
+		ws = new Workspace();
 		
-		file = new JMenu("File");
-		create = new JMenuItem("Create");
-		create.addActionListener(this);
-		open = new JMenuItem("Open");
-		open.addActionListener(this);
-		save = new JMenuItem("Save");
-		save.addActionListener(this);
-		exit = new JMenuItem("Exit");
-		exit.addActionListener(this);
-		file.add(create);
-		file.add(open);
-		file.add(save);
-		file.add(exit);
+		this.add(menu);
+		this.add(fsys);
+		this.add(console);
+		this.add(ws);
 		
-		refactor = new JMenu("Refactor");
-		run = new JMenu("Run");
-		
-		menu.add(file);
-		menu.add(refactor);
-		menu.add(run);
-		
-		this.setJMenuBar(menu);
+		this.repaint();
 	}
 }
