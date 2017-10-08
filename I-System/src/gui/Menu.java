@@ -1,11 +1,8 @@
 package gui;
 
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-
 import javax.swing.BorderFactory;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.SequentialGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,32 +16,46 @@ public class Menu extends JPanel {
 	
 	public void init() {
 		this.setVisible(true);
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		this.setBounds(0, 0, 100, 720);
+		this.setLayout(null);
+		this.setBounds(0, 0, 75, 720);
 		this.setBackground(Main.DARK);
 		this.setBorder(BorderFactory.createLineBorder(Main.DARK_BORDER, 1));
 		
 		newFile = new JLabel(getIcon(1), JLabel.CENTER);
 		newFile.setBackground(Main.DARK);
 		newFile.setBorder(Main.padding);
-		newFile.setSize(100,100);
-//		newFile.setBounds(0, 100, 100, 100);
+		newFile.setBounds(0, 75, 75, 75);
 		this.add(newFile);
 		
-		this.add(Box.createRigidArea(new Dimension(0, 80)));
 		open = new JLabel(getIcon(2), JLabel.CENTER);
 		open.setBackground(Main.DARK);
 		open.setBorder(Main.padding);
-		open.setSize(100,100);
-//		open.setBounds(0, 200, 100, 100);
+		open.setBounds(0, 150, 75, 75);
 		this.add(open);
 		
-//		open = new JLabel(getIcon(2), JLabel.CENTER);
-//		open.setBackground(Main.DARK);
-//		open.setBorder(Main.padding);
-//		open.setBounds(0, 200, 100, 100);
-//		this.add(open);
-
+		save = new JLabel(getIcon(3), JLabel.CENTER);
+		save.setBackground(Main.DARK);
+		save.setBorder(Main.padding);
+		save.setBounds(0, 225, 75, 75);
+		this.add(save);
+		
+		run = new JLabel(getIcon(5), JLabel.CENTER);
+		run.setBackground(Main.DARK);
+		run.setBorder(Main.padding);
+		run.setBounds(0, 300, 75, 75);
+		this.add(run);
+		
+		build = new JLabel(getIcon(6), JLabel.CENTER);
+		build.setBackground(Main.DARK);
+		build.setBorder(Main.padding);
+		build.setBounds(0, 375, 75, 75);
+		this.add(build);
+		
+		settings = new JLabel(getIcon(4), JLabel.CENTER);
+		settings.setBackground(Main.DARK);
+		settings.setBorder(Main.padding);
+		settings.setBounds(0, 450, 75, 75);
+		this.add(settings);
 	}
 	
 	public ImageIcon getIcon(int type) {

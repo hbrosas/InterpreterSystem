@@ -9,7 +9,7 @@ import javax.swing.border.Border;
 
 public class Main {
 	public final static Font MAIN_FONT = new Font("Helvetica", Font.PLAIN, 14);
-	public final static Border padding = BorderFactory.createEmptyBorder(10, 10, 10, 10);
+	public final static Border padding = BorderFactory.createEmptyBorder(3,3,3,3);
 	
 	public final static Color DARK = Color.decode("#424242");
 	public final static Color DARK_BORDER = Color.decode("#3a3a3a");

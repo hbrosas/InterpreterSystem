@@ -10,7 +10,7 @@ public class FileSystem extends JPanel {
 	
 	public void init() {
 		this.setVisible(true);
-		this.setBounds(100, 0, 250, 720);
+		this.setBounds(75, 0, 275, 720);
 		this.setBackground(Main.DARK);
 		this.setBorder(BorderFactory.createLineBorder(Main.DARK_BORDER, 1));
 	}
