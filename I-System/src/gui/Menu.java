@@ -1,6 +1,11 @@
 package gui;
 
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
 import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,16 +19,32 @@ public class Menu extends JPanel {
 	
 	public void init() {
 		this.setVisible(true);
+		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		this.setBounds(0, 0, 100, 720);
 		this.setBackground(Main.DARK);
 		this.setBorder(BorderFactory.createLineBorder(Main.DARK_BORDER, 1));
 		
-		newFile = new JLabel();
+		newFile = new JLabel(getIcon(1), JLabel.CENTER);
 		newFile.setBackground(Main.DARK);
-		newFile.setIcon(getIcon(1));
 		newFile.setBorder(Main.padding);
-		newFile.setBounds(0, 100, 90, 90);
+		newFile.setSize(100,100);
+//		newFile.setBounds(0, 100, 100, 100);
 		this.add(newFile);
+		
+		this.add(Box.createRigidArea(new Dimension(0, 80)));
+		open = new JLabel(getIcon(2), JLabel.CENTER);
+		open.setBackground(Main.DARK);
+		open.setBorder(Main.padding);
+		open.setSize(100,100);
+//		open.setBounds(0, 200, 100, 100);
+		this.add(open);
+		
+//		open = new JLabel(getIcon(2), JLabel.CENTER);
+//		open.setBackground(Main.DARK);
+//		open.setBorder(Main.padding);
+//		open.setBounds(0, 200, 100, 100);
+//		this.add(open);
+
 	}
 	
 	public ImageIcon getIcon(int type) {
