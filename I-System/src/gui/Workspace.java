@@ -19,17 +19,19 @@ public class Workspace extends JPanel {
 		this.setBackground(Main.DARK);
 		this.setBorder(BorderFactory.createLineBorder(Main.DARK_BORDER, 1));
 		
-		console = new JTextArea();
+		console = new JTextArea("Hallwayy giirl");
 	    console.setEditable(true);
-	    console.setBounds(5, 5, 915, 460);
+	    console.setBounds(10, 20, 910, 460);
 	    console.setVisible(true);
 	    console.setLineWrap(true);
 	    console.setForeground(Main.LIGHT);
 	    console.setBackground(Main.DARK);
+	    console.setBorder(null);
 	    console.setWrapStyleWord(true);
+	    console.setCaretColor(Main.LIGHT);
 	     
 	    scroll = new JScrollPane(console);
-	    scroll.setBounds(5, 5, 915, 460);
+	    scroll.setBounds(10, 10, 910, 460);
 	    scroll.setForeground(Main.LIGHT);
 	    scroll.setBackground(Main.DARK);
 	    scroll.setBorder(BorderFactory.createLineBorder(Main.DARK_BORDER));
