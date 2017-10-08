@@ -1,5 +1,3 @@
-package gui;
-
 import java.awt.Color;
 import java.awt.Font;
 
@@ -16,7 +14,6 @@ public class Main {
 	public final static Color LIGHT = Color.decode("#fafafa");
 	
 	private Window window;
-	
 	public Main() {
 	}
 	
@@ -26,5 +23,6 @@ public class Main {
 	
 	public void init() {
 		window = new Window("J3J3 | Interpreter System");
+		window.repaint();
 	}
 }

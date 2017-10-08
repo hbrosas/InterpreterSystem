@@ -1,5 +1,3 @@
-package gui;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -33,17 +31,15 @@ public class Window extends JFrame implements ActionListener {
 		this.setVisible(true);
 		this.setSize(1280,720);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		menu = new Menu();
+
 		fsys = new FileSystem();
 		console = new Console();
 		ws = new Workspace();
+		menu = new Menu(ws);
 		
 		this.add(menu);
 		this.add(fsys);
 		this.add(console);
 		this.add(ws);
-		
-		this.repaint();
 	}
 }

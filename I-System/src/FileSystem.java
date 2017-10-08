@@ -1,9 +1,8 @@
-package gui;
-
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
 public class FileSystem extends JPanel {
+	
 	public FileSystem() {
 		init();
 	}

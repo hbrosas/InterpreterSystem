@@ -1,17 +1,44 @@
-package gui;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.SequentialGroup;
+
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.Token;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Menu extends JPanel {
+public class Menu extends JPanel implements MouseListener {
 	private JLabel logo, newFile, open, save, settings, run, build;
+	private Workspace ws;
 	
-	public Menu() {
+	public Menu(Workspace ws) {
+		this.ws = ws;
 		init();
+	}
+	
+	public void mouseClicked(MouseEvent e) {
+		if(e.getSource() == run) {
+			String input = ws.getCode();
+			ANTLRInputStream inputStream = new ANTLRInputStream( input );
+			JejeLexer lexer = new JejeLexer(inputStream);
+//			CommonTokenStream tokens = new CommonTokenStream(lexer);
+//			System.out.println(tokens.getText());
+		
+			for (Token token = lexer.nextToken();
+				     token.getType() != Token.EOF;
+				     token = lexer.nextToken()) {
+				System.out.println(token.getType() + " | " + token.getText());
+			}
+		}
 	}
 	
 	public void init() {
@@ -43,6 +70,7 @@ public class Menu extends JPanel {
 		run.setBackground(Main.DARK);
 		run.setBorder(Main.padding);
 		run.setBounds(0, 300, 75, 75);
+		run.addMouseListener(this);
 		this.add(run);
 		
 		build = new JLabel(getIcon(6), JLabel.CENTER);
@@ -75,5 +103,25 @@ public class Menu extends JPanel {
 		case 6: return build;
 		default: return null;
 		}
+	}
+	
+	public void mouseExited(MouseEvent e) {}
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
