@@ -35,6 +35,8 @@
  *  $ antlr4 Java.g4
  *  $ javac *.java
  *  $ grun Java compilationUnit *.java
+ * 
+ * 	Credited to: java.g4's base code
  */
 grammar Jeje;
 
@@ -657,6 +659,8 @@ TRY           : 'try';
 VOID          : 'v01d';
 VOLATILE      : 'v0l4t1l3';
 WHILE         : 'wh1l3';
+SCAN		  : 'sc4n';
+PRINT		  :	'pr1nt';
 
 // §3.10.1 Integer Literals
 
