@@ -35,7 +35,7 @@ public class Menu extends JPanel implements MouseListener {
 		
 			for (Token token = lexer.nextToken();
 				     token.getType() != Token.EOF;
-				     token = lexer.nextToken()) {
+				     token = lexer.nextToken()) {	
 				System.out.println(token.getType() + " | " + token.getText());
 			}
 		}
