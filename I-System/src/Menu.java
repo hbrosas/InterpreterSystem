@@ -11,6 +11,7 @@ import javax.swing.GroupLayout.SequentialGroup;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -30,6 +31,7 @@ public class Menu extends JPanel implements MouseListener {
 			String input = ws.getCode();
 			ANTLRInputStream inputStream = new ANTLRInputStream( input );
 			JejeLexer lexer = new JejeLexer(inputStream);
+<<<<<<< HEAD
 //			CommonTokenStream tokens = new CommonTokenStream(lexer);
 //			System.out.println(tokens.getText());
 		
@@ -38,6 +40,14 @@ public class Menu extends JPanel implements MouseListener {
 				     token = lexer.nextToken()) {	
 				System.out.println(token.getType() + " | " + token.getText());
 			}
+=======
+			CommonTokenStream tokens = new CommonTokenStream(lexer);
+			JejeParser parser = new JejeParser(tokens);
+//			parser.removeErrorListeners();
+//			parser.addErrorListener(ErrorListener.INSTANCE);
+			ParseTree tree = parser.compilationUnit();
+	        System.out.println(tree.toStringTree(parser));
+>>>>>>> 3f0b3067b60abb9f9ed4ecfef4ea20984740dd2a
 		}
 	}
 	
