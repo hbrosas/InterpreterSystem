@@ -7,7 +7,8 @@ public class ErrorListener extends BaseErrorListener {
 	   @Override
 	   public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e)
 	      throws ParseCancellationException {
-	         throw new ParseCancellationException(msg);
+//	         throw new ParseCancellationException(msg);
+		   System.out.println("ERROR at Line " + line + ": " + msg);
 	      }
 	   	 
 }
