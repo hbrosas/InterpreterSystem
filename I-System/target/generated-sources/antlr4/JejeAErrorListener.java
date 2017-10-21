@@ -35,7 +35,7 @@ public class JejeAErrorListener implements ANTLRErrorListener{
 	public void syntaxError(Recognizer<?, ?> arg0, Object arg1, int arg2,
 			int arg3, String arg4, RecognitionException arg5) {
 		// TODO Auto-generated method stub
-		System.err.println("Syntax Error");
+		System.err.println("5YNT4X 3Rr0R !");
 	}
 
 }
