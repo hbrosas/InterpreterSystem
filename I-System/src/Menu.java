@@ -35,16 +35,17 @@ public class Menu extends JPanel implements MouseListener {
 //			CommonTokenStream tokens = new CommonTokenStream(lexer);
 //			System.out.println(tokens.getText());
 		
-			for (Token token = lexer.nextToken();
+			 /* for (Token token = lexer.nextToken();
 				     token.getType() != Token.EOF;
 				     token = lexer.nextToken()) {	
 				System.out.println(token.getType() + " | " + token.getText());
-			}
+			} */
+			
 			CommonTokenStream tokens = new CommonTokenStream(lexer);
 			JejeParser parser = new JejeParser(tokens);
 			parser.removeErrorListeners();
 			
-			JejeAErrorListener jejeErrorListener = new JejeAErrorListener();
+			JejeErrorListener jejeErrorListener = new JejeErrorListener();
 
 			parser.addErrorListener(jejeErrorListener);
 			ParseTree tree = parser.compilationUnit();
